@@ -77,7 +77,7 @@ You can trade cryptocurrencies, forex, stocks, and other markets depending on th
 ### **How secure is DBotX?**
 DBotX uses top-tier security protocols to protect your funds and personal information.
 ---
-# DBot Changelog Timeline
+# Changelog
 
 ```mermaid
 gantt
