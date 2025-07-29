@@ -22,86 +22,278 @@
 - **Token Security Analysis** (honeypot, LP burnt, etc.)
 - **Batch Operations** for mass position management
 
-## 📈 Recent Major Updates (v1.56.0)
+# 📈 DBot Development Timeline
 
-```diff
-+ Added auto-migration of TP/SL to PancakeSwap when four.meme market full
-+ PumpSwap for Solana fully supported (fast trading/copy trading/limit orders)
-+ Marketing K-Line structure optimized
-+ Solana transaction speed improvements
-```
+> **Development progress of DBot, DEX / Bot / API and other functional updates**
 
-
-# Changelog
-
-```mermaid
-gantt
-    title DBot Changelog Timeline
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b %d, %Y
-
-    %% 2025 Releases
-    section 2025 Releases
-    v1.51.0 - OKX DEX & Improvements       :milestone, 2025-02-17, 1d
-    v1.50.0 - Trailing Stop & Batch Tasks    :milestone, 2025-02-10, 1d
-    v1.49.0 - Batch Ops, Audit, Pools         :milestone, 2025-01-23, 1d
-    v1.48.0 - Fast Buy/Sell Trailing Stop      :milestone, 2025-01-20, 1d
-    v1.47.0 - User Audit, Custom Timeframes     :milestone, 2025-01-13, 1d
-    v1.46.0 - Dev Sell, Token2022, Defaults     :milestone, 2025-01-06, 1d
-
-    %% Late 2024 Releases
-    section Late 2024 Releases
-    v1.45.0 - Buy Limits, Multi-Wallet & Token Info      :milestone, 2024-12-30, 1d
-    v1.44.0 - Blacklist Tokens & TP/SL Expiry             :milestone, 2024-12-23, 1d
-    v1.43.0 - Dev Sell & Accumulated Stats                :milestone, 2024-12-16, 1d
-    v1.42.0 - Copy Trading Filters & Fixed Sell           :milestone, 2024-12-09, 1d
-    v1.41.0 - Raydium Sell, Grouping & Security           :milestone, 2024-12-02, 1d
-    v1.40.0 - Auto Sell on Pump & Smart Alerts            :milestone, 2024-11-22, 1d
-    v1.39.0 - Anti-MEV & Low-Value Filter                 :milestone, 2024-11-15, 1d
-    v1.38.0 - Optimized Copy Trading & Records             :milestone, 2024-11-08, 1d
-    v1.37.0 - Auto-Execute Orders & 20x Solana Speed       :milestone, 2024-11-01, 1d
-    v1.36.0 - Custom TP/SL, Multi-Wallet, Excel Export      :milestone, 2024-10-25, 1d
-    v1.35.0 - EVM Copy Filters, Auto Buy & Alerts           :milestone, 2024-10-18, 1d
-    v1.34.0 - More Copy Filters & Speedup, Smart Money Data  :milestone, 2024-10-12, 1d
-    v1.33.0 - Solana Filters, Batch Close & Auto Migrate     :milestone, 2024-09-20, 1d
-    v1.32.0 - Meteora Support & Share PnL Chart              :milestone, 2024-09-14, 1d
-    v1.31.0 - Faster Transactions & EtherVista, Anti-MEV     :milestone, 2024-09-06, 1d
-    v1.30.0 - Tron Bot, SunSwap/SunPump, Bitget Login        :milestone, 2024-08-30, 1d
-    v1.29.0 - Auto Migrate Pump & Ultra-Fast Sell            :milestone, 2024-08-23, 1d
-    v1.28.0 - Expanded Solana Transactions & TG Bot Backup   :milestone, 2024-08-16, 1d
-    v1.27.0 - Segmented/Proportional TP/SL, H5 Optimization    :milestone, 2024-08-09, 1d
-    v1.26.0 - TP/SL for Fast Buy, Unified TG Bot, Batch Delete :milestone, 2024-08-02, 1d
-    v1.25.0 - Market Group Bot & One-Buy Mode                :milestone, 2024-07-26, 1d
-    v1.24.0 - TP/SL Upgrade & Burn Tokens for SOL Rent       :milestone, 2024-07-19, 1d
-    v1.23.0 - TP/SL and Market Cap Filtering, TG Bot Style    :milestone, 2024-07-12, 1d
-    v1.22.0 - Upgraded Routing & Dramatic Speed, TG Templates :milestone, 2024-07-05, 1d
-    v1.21.0 - Moonshot/Orca Support & Token Holding PnL (TG)  :milestone, 2024-06-28, 1d
-    v1.20.0 - Raydium (CPMM), Wallet PnL, Copy TP/SL          :milestone, 2024-06-21, 1d
-    v1.19.0 - Jupiter V6, Fee Wallet, Google 2FA              :milestone, 2024-06-14, 1d
-    v1.18.0 - Meteora (DLMM), Token Security, TG Limit Orders  :milestone, 2024-06-07, 1d
-    v1.17.0 - Uniswap V3 (Multi-Chain), Trading Templates      :milestone, 2024-05-31, 1d
-    v1.16.0 - Raydium (CLMM), Multiple Copy Modes, Bot Opt.    :milestone, 2024-05-24, 1d
-    v1.15.0 - Uniswap V3 (Base), Custom DEX, Solana Anti-MEV    :milestone, 2024-05-17, 1d
-    v1.14.0 - Pump Support, Copy Ratio Sell, Jito Bribery       :milestone, 2024-05-10, 1d
-    v1.13.0 - Multi-Chain Multisender/Collection, TG Invites   :milestone, 2024-04-30, 1d
-    v1.12.0 - Multi-Language & Token Multisender/Collection     :milestone, 2024-04-26, 1d
-    v1.11.0 - Trading Fees/Rebates, Automation API             :milestone, 2024-04-19, 1d
-    v1.10.0 - Arbitrum Bot & Advanced Settings                :milestone, 2024-04-12, 1d
-    v1.9.0  - Base Trading Bot Launched                      :milestone, 2024-04-03, 1d
-    v1.8.0  - BSC Trading Bot & Solana Bot Optimization       :milestone, 2024-04-01, 1d
-
-    %% Early 2024 & Earlier Releases (Condensed)
-    section Early 2024 & Earlier
-    v1.7.0  - SOL Trading Bot         :milestone, 2024-03-15, 1d
-    v1.6.0  - Auto Sniper & Simulator :milestone, 2024-03-01, 1d
-    v1.5.0  - DEX Trading Bot Upgrade :milestone, 2024-02-15, 1d
-    v1.4.0  - DEX Trading Bot Launched:milestone, 2024-02-01, 1d
-    v1.3.0  - DeFi/Aimbot Monitor     :milestone, 2024-01-01, 1d
-    Early Releases & Features (2023-2022) :milestone, 2023-12-01, 1d
-    Initial Launch & Beta (2021-2022)       :milestone, 2021-09-28, 1d
-```
 ---
 
+## 🚀 2025 Releases
+
+### 📅 July 28, 2025 | `v1.77.0`
+```
+🔧 Meteora DBC / DYN2 / DYN optimizations
+🏷️ New transaction tags (bundler/new holder/liquidate)
+💰 Liquidity pool tags for holders
+```
+- **Dashboard & Website**: Meteora transaction optimizations, real-time transaction tags, multi-selection support
+- **API & WebSocket**: Meme-related APIs optimized, Pool/pair price API added
+
+### 📅 July 21, 2025 | `v1.76.0`
+```
+📊 DFlow Solana copy trading support
+🎯 Bonk marketing integration
+🔊 Sound alerts & customizable Meme styles
+```
+- **Dashboard & Website**: DFlow copy trading, Meteora stability improvements, sound alerts
+- **Telegram Bot**: DFlow support, USDC trading pairs for Alert Bot
+- **API**: Burned token records API
+
+### 📅 July 14, 2025 | `v1.75.0`
+```
+💱 USDC & USD1 trading pairs support
+🏷️ New transaction tags (insider/whale/fresh)
+🎨 Custom Meme list styles
+```
+- **Dashboard & Website**: Solana USDC & BSC USD1 trading pairs, custom styling
+- **API**: Token/Pair search API
+
+### 📅 July 7, 2025 | `v1.74.0`
+```
+💰 USDC for Meteora DBC/DYN2
+📊 Marketing APIs & WebSockets expansion
+⚫ Token blacklist for marketing
+```
+- **Dashboard & Website**: USDC trading pairs, blacklist support, copy record filtering
+- **API**: Marketing APIs and WebSockets
+
+### 📅 June 30, 2025 | `v1.73.0`
+```
+💵 USD1 BSC copy trading
+🔄 Auto-migrate to PancakeSwap
+📊 Bubble chart (position analysis)
+```
+- **Dashboard & Website**: USD1 copy trading, auto-migration, bubble charts
+- **Telegram Bot**: USD1 support, auto-migration features
+- **API**: USD1 trading pair support
+
+### 📅 June 23, 2025 | `v1.72.0`
+```
+⚡ Meteora DYN2 Solana support
+👥 Batch monitoring operations
+📋 Token watchlist for K-line
+```
+- **Dashboard & Website**: DYN2 support, batch operations, watchlist functionality
+- **Telegram Bot**: DYN2 integration
+- **API**: DYN2 trading APIs
+
+---
+
+## 🌟 Q2 2025 Major Updates
+
+### 📅 June 16, 2025 | `v1.71.0`
+```
+👁️ Enhanced wallet monitoring
+📱 H5 K-line details
+⭐ Favorite token groups
+```
+
+### 📅 June 13, 2025 | `v1.70.0`
+```
+💵 USD1 Four.meme BSC support
+📊 Default sort by value
+```
+
+### 📅 June 10, 2025 | `v1.69.0`
+```
+🥞 USD1 PancakeSwap V3 BSC
+🎯 UI interaction optimizations
+```
+
+### 📅 June 9, 2025 | `v1.68.0`
+```
+🥞 USD1 PancakeSwap V2 BSC
+📈 7-day trading statistics
+🚀 Meme soaring list
+```
+
+---
+
+## 🔥 Q1 2025 Highlights
+
+### 📅 May 29, 2025 | `v1.66.0`
+```
+⚡ 0slot high-speed routing
+📱 Trading result notifications
+🚀 Solana speed optimizations
+```
+
+### 📅 May 19, 2025 | `v1.64.0`
+```
+🎯 Trigger orders for K-line
+👁️ Real-time wallet transactions
+🏗️ API structure adjustments
+```
+
+### 📅 May 12, 2025 | `v1.63.0`
+```
+🎯 Boop platform support
+⚡ Meteora DBC integration
+📊 K-line transaction marking
+```
+
+### 📅 April 27, 2025 | `v1.61.0`
+```
+⚡ Instant K-line trading
+💰 EVM chain value filtering
+🎯 Pump optimizations
+```
+
+### 📅 April 21, 2025 | `v1.60.0`
+```
+🚀 Raydium LaunchLab support
+📊 K-line holders analysis
+📅 Custom time ranges
+```
+
+### 📅 March 31, 2025 | `v1.57.0`
+```
+📊 K-line structure optimization
+🔍 Enhanced search functionality
+💰 Token position details
+```
+
+### 📅 March 19, 2025 | `v1.56.0`
+```
+🔄 Auto-migrate to PancakeSwap
+🚀 PumpSwap Solana support
+📊 K-line marketing optimization
+```
+
+### 📅 March 10, 2025 | `v1.54.0`
+```
+⚙️ Custom priority fees
+⏰ Task execution timing
+🏗️ System stability improvements
+```
+
+### 📅 February 24, 2025 | `v1.52.0`
+```
+🥞 PancakeSwap V3 BSC
+🎯 Four.meme BSC support
+🛡️ Enhanced Anti-MEV
+```
+
+### 📅 January 23, 2025 | `v1.49.0`
+```
+🔄 Batch operations
+👥 User audit system
+💧 Liquidity pool insights
+```
+
+---
+
+## 📊 2024 Major Milestones
+
+### Q4 2024 - Security & Advanced Features
+| Date | Version | Key Features |
+|------|---------|--------------|
+| **Dec 30** | `v1.45.0` | 🛡️ Copy trading limits, 📱 Multi-wallet monitoring |
+| **Dec 23** | `v1.44.0` | ⚫ Token blacklists, ⏰ Custom expiry times |
+| **Dec 16** | `v1.43.0` | 💰 Dev sell support, 📊 Trading statistics |
+| **Dec 9** | `v1.42.0` | 🎯 Multiple filters, 💸 Fixed multiples |
+| **Dec 2** | `v1.41.0` | 🚀 Raydium sell, 🔒 Security enhancements |
+
+### Q3 2024 - Speed & Stability
+| Date | Version | Key Features |
+|------|---------|--------------|
+| **Nov 22** | `v1.40.0` | 🚀 Auto Raydium sell, 📱 Smart money alerts |
+| **Nov 15** | `v1.39.0` | 🛡️ Anti-MEV optimization, 💰 Holdings filtering |
+| **Nov 8** | `v1.38.0` | ⚡ Speed improvements, 📊 Pump progress |
+| **Oct 25** | `v1.37.0` | ⚙️ Custom TP/SL, 👥 Multi-wallet support |
+
+### Q2 2024 - Multi-Chain Expansion
+| Date | Version | Key Features |
+|------|---------|--------------|
+| **Jun 28** | `v1.30.0` | 🌙 Moonshot support, 📊 PnL viewing |
+| **Jun 21** | `v1.29.0` | 🌊 Raydium CPMM, 💰 Token holding PnL |
+| **Jun 14** | `v1.28.0` | ⚡ Jupiter V6, 🔐 2FA support |
+| **May 31** | `v1.27.0` | 🦄 Uniswap V3 all chains, 📋 Trading templates |
+
+### Q1 2024 - Foundation Building
+| Date | Version | Key Features |
+|------|---------|--------------|
+| **Apr 30** | `v1.25.0` | 📤 Token multisender, 👥 Telegram integration |
+| **Apr 19** | `v1.24.0` | 💰 Trading fees & rebates, 🤖 Automation API |
+| **Apr 12** | `v1.23.0` | ⚡ Arbitrum bot, ⚙️ Advanced settings |
+| **Apr 3** | `v1.22.0` | 🔵 Base trading bot launch |
+| **Apr 1** | `v1.21.0` | 💛 BSC trading bot & SOL optimization |
+
+---
+
+## 🏗️ Historical Development
+
+### 2023 - Platform Evolution
+```
+🎯 Dec 2023: Webhook & Bot Integration
+📊 Nov 2023: Twitter Monitoring Launch  
+🔧 Aug 2023: API Query System
+⚡ Jul 2023: L2 Network Support
+📡 Jun 2023: Monitoring Subscriptions
+🚀 May 2023: DBot v1.0 Official Release
+```
+
+### 2022 - Core Development
+```
+🤖 Dec 2022: Discord & Telegram Bot v1.0 Beta
+📡 Sep 2022: Webhook Standard Development
+🔗 Aug 2022: API Standard Development  
+🚀 Jul 2022: DBot v1.0 Beta Launch
+⚡ May 2022: GData v1.5 GPU Engine Upgrade
+```
+
+### 2021 - Foundation
+```
+💎 Sep 28, 2021: GData v1.0 GPU Engine Birth
+```
+
+---
+
+## 📈 Development Statistics
+
+| Year | Major Releases | Key Innovations |
+|------|----------------|-----------------|
+| **2025** | 15+ versions | DFlow, USD1 pairs, K-line enhancements |
+| **2024** | 25+ versions | Multi-chain expansion, Speed optimizations |
+| **2023** | 8+ versions | API ecosystem, Monitoring systems |
+| **2022** | 6+ versions | Core architecture, Standards development |
+| **2021** | 1 version | GPU engine foundation |
+
+---
+
+## 🎯 Feature Categories
+
+### 🤖 **Trading Automation**
+- Copy Trading | Auto Sniper | Limit Orders | Fast Buy/Sell
+- Take Profit/Stop Loss | Trailing Stop | Dev Sell
+
+### 📊 **Analytics & Monitoring**
+- Real-time Charts | Token Analysis | Wallet Monitoring
+- PnL Tracking | Security Alerts | Smart Money Analysis
+
+### 🔗 **Multi-Chain Support**
+- Solana | Ethereum | BSC | Base | Arbitrum | Tron
+- 20+ DEX Integrations | Cross-chain Operations
+
+### 🛡️ **Security Features**
+- Anti-MEV Protection | Token Security Checks
+- IP Whitelists | 2FA Authentication | Audit Logs
+
+---
+
+*Last updated: July 29, 2025*
+*Total versions released: 77+*
+*Development timeline: 4+ years*
 ## 🌟 Start Trading Smarter Today!
 
 Don't miss your chance to join the world of copytrading and achieve financial freedom.  
