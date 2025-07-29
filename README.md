@@ -1,4 +1,4 @@
-# 🚀 DBot - The Ultimate Crypto Trading Automation Platform
+# 🚀 [DBotX](https://dbotx.com/?ref=83357810) - The Ultimate Crypto Trading Automation Platform
 
 ![DBot Banner](https://cdn.dbotx.com/image/defi_page_index_img_1.webp)
 
