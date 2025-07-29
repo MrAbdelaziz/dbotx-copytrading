@@ -5,7 +5,6 @@
 **Automate your crypto trading across multiple chains with lightning-fast execution, advanced features, and AI-powered analytics.**
 
 [Visit DBotX](https://dbotx.com/?ref=83357810)
-[![Signup](https://img.shields.io/badge/Signup-orange)](https://dbotx.com/?ref=83357810)
 
 ## 🔥 Why Choose DBot?
 
